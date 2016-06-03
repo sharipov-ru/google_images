@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-    GoogleImages.search('ruby', img_size: 'xlarge')
+```ruby
+ENV['GOOGLE_IMAGES_KEY'] = 'GOOGLE_API_KEY'
+ENV['GOOGLE_IMAGES_CX'] = 'GOOGLE_SEARCH_CX'
+
+GoogleImages.search('ruby')
+GoogleImages.search('ruby', img_size: 'xlarge')
+```
 
 ## Contributing
 
