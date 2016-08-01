@@ -23,6 +23,7 @@ module GoogleImages
           alt:              query.api_params[:alt] || 'json',
           safe:             query.api_params[:safe] || 'off',
           num:              query.api_params[:num] || nil,
+          start:            query.api_params[:start] || nil,
           rights:           query.api_params[:rights] || nil,
           imgSize:          query.api_params[:img_size] || nil,
           imgType:          query.api_params[:img_type] || nil,

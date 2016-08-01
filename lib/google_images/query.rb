@@ -14,6 +14,7 @@ module GoogleImages
       :img_size,
       :img_type,
       :num,
+      :start,
       :rights,
       :safe
     ]

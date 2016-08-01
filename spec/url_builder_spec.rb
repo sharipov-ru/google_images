@@ -58,6 +58,13 @@ describe GoogleImages::URLBuilder do
 
       expect(url).to eq("#{url_main_part}&num=5")
     end
+
+    it 'adds start parameter' do
+      query = GoogleImages::Query.new('ruby', start: 5)
+      url = described_class.build(query, auth)
+
+      expect(url).to eq("#{url_main_part}&start=5")
+    end
     
     it 'adds rights parameter' do
       query = GoogleImages::Query.new('ruby', rights: 'cc_noncommercial')
