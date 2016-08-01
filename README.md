@@ -26,6 +26,7 @@ ENV['GOOGLE_IMAGES_CX'] = 'GOOGLE_SEARCH_CX'
 
 GoogleImages.search('ruby')
 GoogleImages.search('ruby', img_size: 'xlarge')
+GoogleImages.search('ruby', start: 10, num: 10)
 ```
 
 ## Contributing
