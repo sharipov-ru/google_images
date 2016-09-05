@@ -7,7 +7,8 @@ module GoogleImages
       API_URL = 'https://www.googleapis.com/customsearch/v1'
 
       def build(query, auth)
-        "#{API_URL}?q=#{query.search_term}&#{api_keys(auth)}&#{parameters(query)}"
+        url = "#{API_URL}?q=#{query.search_term}&#{api_keys(auth)}&#{parameters(query)}"
+        URI.encode(url)
       rescue => e
         raise GoogleImages::Errors::URLGenerationError
       end

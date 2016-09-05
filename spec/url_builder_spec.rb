@@ -4,6 +4,12 @@ describe GoogleImages::URLBuilder do
   let(:auth)  { GoogleImages::Auth.new('secret_key', 'secret_cx') }
   let(:url_main_part) { 'https://www.googleapis.com/customsearch/v1?q=ruby&key=secret_key&cx=secret_cx&searchType=image&alt=json&safe=off' }
 
+  it 'urls-encodes result url' do
+    query = GoogleImages::Query.new('fine search', {})
+    url = described_class.build(query, auth)
+    expect(url).to eq('https://www.googleapis.com/customsearch/v1?q=fine%20search&key=secret_key&cx=secret_cx&searchType=image&alt=json&safe=off')
+  end
+
   context 'when there is no parameters' do
     let(:query) { GoogleImages::Query.new('ruby', {}) }
 
